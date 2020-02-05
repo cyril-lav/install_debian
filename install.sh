@@ -12,7 +12,7 @@ if [ ! $(basename $(pwd)) = "install_debian" ]; then
 fi
 
 # Vérification sudo
-sud echo 'oui' 1>/dev/null 2>/dev/null 
+sudo echo 'oui' 1>/dev/null 2>/dev/null 
 
 if [ "$?" != 0 ]
 then
