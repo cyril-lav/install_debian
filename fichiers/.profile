@@ -29,5 +29,6 @@ fi
 
 feh --bg-scale ~/.config/feh/themes/013.png
 bluetoothctl power off
-xinput set-prop 'SynPS/2 Synaptics TouchPad' 299 1
 xinput set-prop 'SynPS/2 Synaptics TouchPad' 291 1
+xinput set-prop 'SynPS/2 Synaptics TouchPad' 299 1
+ 

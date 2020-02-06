@@ -1,3 +1,7 @@
+#Backlight control
+bindsym $mod+Control+Up exec ~/.config/backlight/backlight-up.sh
+bindsym $mod+Control+Down exec ~/.config/backlight/backlight-down.sh
+
 #Battery popup
 exec --no-startup-id i3-battery-popup
 
@@ -35,11 +39,14 @@ bindcode 172 exec dbus-send \
 # Window border color
 client.focused          #d99f57 #d99f57 #ffffff #d99f57   #d99f57
 
+# xfce region screenshot
+bindsym Print exec xfce4-screenshooter -r -s /home/$USER/Images
+
 # Multi-screen screenshots with scrot
-bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mv $f ~/Images && xclip -selection clipboard -t image/png -i ~/Images`ls -1 -t ~/Images | head -1`' # All screens
+#bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mv $f ~/Images && xclip -#selection clipboard -t image/png -i ~/Images`ls -1 -t ~/Images | head -1`' # All screens
 
 # OSX-like area selection screenshots
-bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mv $f ~/Images && xclip -selection clipboard -t image/png -i ~/Images/`ls -1 -t ~/Images | head -1`' # Area selection
+#bindsym --release Shift+Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mv $f ~/Images && xclip -#selection clipboard -t image/png -i ~/Images/`ls -1 -t ~/Images | head -1`' # Area selection
 
 for_window [class="^.*"] border pixel 1
 new_window 1pixel

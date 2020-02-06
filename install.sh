@@ -3,7 +3,7 @@
 # Conditions : 
 # - installer sudo
 # - se situer dans le dossier install_debian 
-#
+
 
 # Vérification dossier
 if [ ! $(basename $(pwd)) = "install_debian" ]; then
@@ -31,7 +31,7 @@ sudo apt install -y pulseaudio pavucontrol alsa-utils
 sudo apt install -y wicd-gtk
 sudo apt install -y gdm3
 sudo apt install -y feh
-sudo apt install -y scrot
+sudo apt install -y xfce4-screenshooter
 sudo apt install -y zsh kitty
 sudo apt install -y curl psmisc
 sudo apt install -y libreoffice
@@ -50,12 +50,10 @@ sudo apt install -y rofi
 sudo apt install -y gcc
 sudo apt install -y alien
 sudo apt install -y zip unzip
+sudo apt install -y default-jdk
 sudo apt install -y build-essential git cmake cmake-data pkg-config python3-sphinx libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
 sudo apt install -y libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev
-sudo apt purge -y nvidia-driver
-sudo apt purge -y xserver-xorg-video-nouveau
-sudo apt install -y nvidia-kernel-dkms nvidia-xconfig nvidia-settings nvidia-vdpau-driver vdpau-va-driver mesa-utils bumblebee-nvidia primus xserver-xorg-video-nvidia linux-headers-$(uname -r)
-sudo apt purge -y nvidia-persistenced
+
 
 
 sudo chsh -s /bin/zsh $USER
@@ -130,13 +128,23 @@ sudo sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/ins
     # Feh config
     sudo cp -r fichiers/feh /home/$USER/.config
 
+    # gdm3 config
+    sudo dpkg-reconfigure gdm3
+
 # Installation drivers
 sudo apt install -y firmware-iwlwifi
 sudo apt install -y firmware-misc-nonfree
 sudo apt install -y xserver-xorg-video-intel
 sudo apt install -y intel-microcode
 sudo apt install -y linux-headers-$(uname -r|sed 's/[^-]*-[^-]*-//')
-sudo apt install -y nvidia-driver
+
+# Pour installer le driver nvidia + bumblebee, décommentez les lignes suivantes
+#sudo apt purge -y nvidia-driver
+#sudo apt purge -y xserver-xorg-video-nouveau
+#sudo apt install -y nvidia-kernel-dkms nvidia-xconfig nvidia-settings nvidia-vdpau-driver vdpau-va-driver mesa-utils bumblebee-nvidia primus xserver-xorg-video-nvidia linux-headers-$(uname -r)
+#sudo apt purge -y nvidia-persistenced
+
+
 
 # Fin
 echo

@@ -107,5 +107,9 @@ alias tokyo-mount="mkdir /tmp/tokyo; sshfs cylaveyssi@193.49.118.208:. /tmp/toky
 alias tokyo-umount="fusermount -u /tmp/tokyo && rmdir /tmp/tokyo"
 alias grep='grep --color'
 alias egrep='egrep --color'
+alias bbswitch-off='sudo tee /proc/acpi/bbswitch <<<OFF'
+alias bbswitch-on='sudo tee /proc/acpi/bbswitch <<<ON'
+alias bbswitch-status='cat /proc/acpi/bbswitch'
+
 setxkbmap -option "nbsp:none"
-alias poule='git pull'
+
