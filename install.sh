@@ -2,12 +2,12 @@
 
 # Conditions : 
 # - installer sudo
-# - se situer dans le dossier install_debian-master 
+# - se situer dans le dossier install_debian 
 
 
 # Vérification dossier
-if [ ! $(basename $(pwd)) = "install_debian-master" ]; then
-    echo "\033[1;31mVous devez être dans le dossier \"intall_debian-master\"\033[0m"
+if [ ! $(basename $(pwd)) = "install_debian" ]; then
+    echo "\033[1;31mVous devez être dans le dossier \"intall_debian\"\033[0m"
     exit 1
 fi
 
