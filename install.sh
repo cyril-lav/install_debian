@@ -2,12 +2,12 @@
 
 # Conditions : 
 # - installer sudo
-# - se situer dans le dossier install_debian 
+# - se situer dans le dossier install_debian-master 
 
 
 # Vérification dossier
-if [ ! $(basename $(pwd)) = "install_debian" ]; then
-    echo "\033[1;31mVous devez être dans le dossier \"intall_debian\"\033[0m"
+if [ ! $(basename $(pwd)) = "install_debian-master" ]; then
+    echo "\033[1;31mVous devez être dans le dossier \"intall_debian-master\"\033[0m"
     exit 1
 fi
 
@@ -36,7 +36,7 @@ sudo apt install -y zsh kitty
 sudo apt install -y curl psmisc
 sudo apt install -y libreoffice
 sudo apt install -y dpkg
-sudo apt install -y xrandr 
+sudo apt install -y x11-xserver-utils 
 sudo apt install -y fonts-noto-color-emoji
 sudo apt install -y curl
 sudo apt install -y xbindkeys
@@ -115,7 +115,7 @@ sudo sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/ins
     cd ..
 
     # i3wm-themes (par Kthulu120)
-    git clone https://github.com/unix121/i3wm-themes
+    git clone https://github.com/Kthulu120/i3wm-themes
     cd i3wm-themes/scripts/
     ./apply_theme.sh Colors
     cd ../..
