@@ -1,3 +1,5 @@
+#Bbswitch on
+bindsym $mod+F7 exec ~/bin/bbswitch
 #Backlight control
 bindsym $mod+Control+Up exec ~/.config/backlight/backlight-up.sh
 bindsym $mod+Control+Down exec ~/.config/backlight/backlight-down.sh
@@ -37,7 +39,7 @@ bindcode 172 exec dbus-send \
 
 
 # Window border color
-client.focused          #d99f57 #d99f57 #ffffff #d99f57   #d99f57
+client.focused          #ead49b #ead49b #ffffff #ead49b   #ead49b
 
 # xfce region screenshot
 bindsym Print exec xfce4-screenshooter -r -s /home/$USER/Images
@@ -200,7 +202,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exec /home/cyril/.bbswitch-on.sh; i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

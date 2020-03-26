@@ -29,6 +29,11 @@ fi
 
 feh --bg-scale ~/.config/feh/themes/013.png
 bluetoothctl power off
-xinput set-prop 'SynPS/2 Synaptics TouchPad' 291 1
-xinput set-prop 'SynPS/2 Synaptics TouchPad' 299 1
- 
+xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1
+xinput set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Natural Scrolling Enabled' 1
+/home/cyril/.bbswitch-off.sh
+xrandr --output HDMI-2 --left-of eDP-1
+xset b off
+xset -dpms
+xset s noblank
+xautolock -disable

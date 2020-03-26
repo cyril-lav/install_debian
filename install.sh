@@ -47,6 +47,7 @@ sudo apt install -y snap
 sudo apt install -y vim
 sudo apt install -y python-pip
 sudo apt install -y rofi
+sudo apt install -y dkms
 sudo apt install -y gcc
 sudo apt install -y alien
 sudo apt install -y zip unzip
@@ -132,18 +133,16 @@ sudo sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/ins
     sudo dpkg-reconfigure gdm3
 
 # Installation drivers
+sudo apt purge -y xserver-xorg-video-nouveau
 sudo apt install -y firmware-iwlwifi
+sudo apt install -y linux-headers
 sudo apt install -y firmware-misc-nonfree
 sudo apt install -y xserver-xorg-video-intel
 sudo apt install -y intel-microcode
-sudo apt install -y linux-headers-$(uname -r|sed 's/[^-]*-[^-]*-//')
+sudo apt install -y nvidia-driver
+sudo apt purge -y nvidia-persistenced
 
-# Pour installer le driver nvidia + bumblebee, décommentez les lignes suivantes
-#sudo apt purge -y nvidia-driver
-#sudo apt purge -y xserver-xorg-video-nouveau
-#sudo apt install -y nvidia-kernel-dkms nvidia-xconfig nvidia-settings nvidia-vdpau-driver vdpau-va-driver mesa-utils bumblebee-nvidia primus xserver-xorg-video-nvidia linux-headers-$(uname -r)
-#sudo apt purge -y nvidia-persistenced
-
+# bbswitch (https://github.com/Bumblebee-Project/bbswitch)
 
 
 # Fin

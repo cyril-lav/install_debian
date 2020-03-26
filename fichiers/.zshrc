@@ -100,8 +100,8 @@ source $ZSH/oh-my-zsh.sh
 
 alias swap-screen="xrandr --output DP-1 --left-of eDP-1"
 alias ch="chromium"
-alias reboot="systemctl reboot"
-alias poweroff="systemctl poweroff"
+alias reboot="bbswitch-on && systemctl reboot"
+alias poweroff="bbswitch-off && systemctl poweroff"
 alias tokyo="ssh cylaveyssi@193.49.118.208"
 alias tokyo-mount="mkdir /tmp/tokyo; sshfs cylaveyssi@193.49.118.208:. /tmp/tokyo"
 alias tokyo-umount="fusermount -u /tmp/tokyo && rmdir /tmp/tokyo"
@@ -110,6 +110,8 @@ alias egrep='egrep --color'
 alias bbswitch-off='sudo tee /proc/acpi/bbswitch <<<OFF'
 alias bbswitch-on='sudo tee /proc/acpi/bbswitch <<<ON'
 alias bbswitch-status='cat /proc/acpi/bbswitch'
+alias i3lock='i3lock --color=282a36'
+PATH=$HOME/bin:$PATH
 
 setxkbmap -option "nbsp:none"
 
